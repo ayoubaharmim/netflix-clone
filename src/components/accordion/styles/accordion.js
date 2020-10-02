@@ -8,6 +8,7 @@ export const Container = styled.div`
 export const Item = styled.div`
   color: white;
   margin-bottom: 10px;
+  max-width: 670px;
   
   &:first-of-type {
     margin-top: 3em:
@@ -47,7 +48,7 @@ export const Body = styled.div`
   font-weight: normal;
   line-height: normal;
   background: #303030;
-  padding: .8em 2.2em;
+  padding: .8em 2.2em .8em 1.2em;
   user-select: none;
   white-space: pre-wrap;
   

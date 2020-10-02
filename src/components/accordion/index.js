@@ -41,15 +41,19 @@ Accordion.Header = function AccordionHeader({children, ...restProps}) {
   const {toggleShow, setToggleShow} = useContext(ToggleContext);
 
   return (
-    <Header onClick={() => setToggleShow((toggleShow) => !toggleShow)}
+    <Header onClick={() => setToggleShow(!toggleShow)}
             {...restProps}>
       {children}
+      {toggleShow ?
+        (<img src="/images/icons/close-slim.png" alt="Expand"/>) :
+        (<img src="/images/icons/add.png" alt="Close"/>)
+      }
     </Header>
   );
 }
 
 Accordion.Body = function AccordionBody({children, ...restProps}) {
-  const {toggleShow} = useContext(toggleShow);
+  const {toggleShow} = useContext(ToggleContext);
 
   return toggleShow ? <Body {...restProps}>{children}</Body> : null;
 }
